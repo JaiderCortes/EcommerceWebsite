@@ -1,0 +1,130 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.card {
+  all: unset;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 150px;
+  width: 300px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+.card-container .card:not(:last-child) {
+  margin-right: 0;
+}
+
+.card.card-small {
+  height: 16px;
+  width: 168px;
+}
+
+.card-container .card:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.card-container .card:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
+
+.card.highlight-card {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: auto;
+  min-width: 30%;
+  position: relative;
+}
+
+.card.card.highlight-card span {
+  margin-left: 60px;
+}
+
+.card.sale{
+  background-color: #52BE80;
+}
+
+.card-container .card .details{
+  text-align: center;
+}
+
+.card-container .card .btnDct{
+  background-color: #E74C3C;
+  color: white;
+  border: 1px solid #566573;
+  border-radius: 5px;
+  width: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.card-container .card .btnDct:hover{
+  transform: translateY(-3px);
+  background-color: #EC7063;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.card-container .card .btnDct:disabled{
+  background-color: #F1948A;
+  cursor: not-allowed;
+}
+
+.card-container .card .btnInc{
+  background-color: #2980B9;
+  color: white;
+  border: 1px solid #566573;
+  border-radius: 5px;
+  width: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.card-container .card .btnInc:hover{
+  transform: translateY(-3px);
+  background-color: #5499C7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.floating-icon {
+  position: fixed;
+  bottom: 500px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: all 0.5s ease;
+  cursor: default;
+}
+
+.floating-icon i {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.floating-icon:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}

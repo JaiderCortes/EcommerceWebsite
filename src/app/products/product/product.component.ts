@@ -8,6 +8,7 @@ import { Product } from 'src/app/model/product';
 })
 export class ProductComponent {
   public product: Product;
+  public quantities: Array<number>;
 
   constructor(){}
 
@@ -18,6 +19,10 @@ export class ProductComponent {
       price: 2400.69,
       isOnSale: true,
       qtyInCart: 0
+    };
+    this.quantities = [];
+    for(let i = 1; i <= 20; i++){
+      this.quantities.push(i);
     }
   }
 
@@ -30,4 +35,8 @@ export class ProductComponent {
       this.product.qtyInCart--;
     }
   }
+
+  // onQtyChange(qty){
+  //   console.log('Quantity change ', qty);
+  // }
 }

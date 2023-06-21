@@ -1,14 +1,18 @@
 <div class="card-container">
-  <div class="card" [class]="product.isOnSale ? 'card sale' : ''">
+  <div class="card" [class.sale]="product.isOnSale">
     <div class="img"><img [src]="product.imgUrl"></div>
     <div class="details">
       <h2>{{product.name}}</h2>
       <h3>$ {{product.price}}</h3>
       <div>
-        <button class="btnDct" [disabled]="product.qtyInCart == 0"  (click)="decrInCart()">-</button>
-        <span> < Cart options > </span>
+        <button class="btnDct" *ngIf="product.qtyInCart > 0" (click)="decrInCart()">-</button>
+        <span> Cart options </span>
         <button class="btnInc" (click)="incrInCart()">+</button>
       </div>
+      <span>Select quantity: </span>
+      <select class="selectQty">
+        <option [value]="qty" *ngFor="let qty of quantities">{{qty}}</option>
+      </select>
     </div>
   </div>
 </div>
